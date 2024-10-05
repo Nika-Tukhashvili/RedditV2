@@ -9,11 +9,14 @@ namespace Reddit.Models
         public string Title { get; set; }
         public string Content { get; set; }
 
-        public string CommunityName { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; }
         public virtual List<Comment> Comments { get; set; } = new List<Comment>();
         public virtual User Author { get; set; }
         public int AuthorId { get; set; }
+
+        public virtual Community Community { get; set; }
+        public int CommunityId { get; set; }
+
     }
 }
