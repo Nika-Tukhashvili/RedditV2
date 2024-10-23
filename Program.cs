@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Reddit;
+using Reddit.Repositories;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
     options.LogTo(Console.WriteLine, LogLevel.Information);
     options.UseLazyLoadingProxies();
 });
+
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
     policy
