@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Reddit.Models
+﻿namespace Reddit.Models
 {
     public class Community
     {
